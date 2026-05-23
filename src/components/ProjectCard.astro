@@ -1,0 +1,41 @@
+---
+const {
+  title = '',
+  description = '',
+  image = null,
+  tags = [] as string[],
+  github = null,
+  youtube = null,
+}: {
+  title?: string;
+  description?: string;
+  image?: string | null;
+  tags?: string[];
+  github?: string | null;
+  youtube?: string | null;
+} = Astro.props;
+---
+
+<article class="bg-white/3 rounded-lg p-4 shadow-sm">
+  <div class="flex flex-col gap-4">
+    <div>
+      <h4 class="text-lg font-semibold">{title}</h4>
+      <p class="text-sm opacity-80 mb-2">{description}</p>
+
+      <div class="flex flex-wrap gap-2 items-center">
+        {tags.map((t: string) => (
+          <span class="text-xs px-2 py-1 rounded bg-white/5">{t}</span>
+        ))}
+      </div>
+
+      <div class="mt-3 flex gap-2">
+        {github ? <a class="text-sm underline" href={github} target="_blank" rel="noopener">Repositorio</a> : null}
+        {youtube ? <a class="text-sm underline" href={youtube} target="_blank" rel="noopener">Video</a> : null}
+      </div>
+    </div>
+
+    {image ? (
+      <img src={image} alt={`Captura de ${title}`} class="w-full h-auto max-h-64 object-contain rounded" />
+    ) : null}
+  </div>
+</article>

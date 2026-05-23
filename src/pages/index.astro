@@ -1,11 +1,66 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Badge from '../components/Badge.astro';
 import Layout from '../layouts/Layout.astro';
+import LinkedInIcon from '../components/icons/linkedin.astro';
+import GitHubIcon from '../components/icons/github.astro';
+import MailIcon from '../components/icons/mail.astro';
+import CodeIcon from '../components/icons/code.astro';
+import SocialPill from '../components/SocialPill.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Projects from '../components/Projects.astro';
+import Footer from '../components/Footer.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+title="Portafolio de Gabriel Muñoz"
+description="Portafolio de Gabriel Muñoz, estudiante de sexto semestre de la Licenciatura en Multimedia y Animación Digital. Me apasiona el desarrollo de Videojuegos y la creación de Experiencias Interactivas.">
+	<main class="px-2">
+		<SectionContainer id="sobre-mi" class="py-15 pb-15">
+			<h1 
+			class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-4 items-center">
+				Hola, soy Gabriel <a href= "https://www.linkedin.com/in/josé-muñoz-b1440a38a/"
+				target="_blank" rel="noopener"
+				 class="flex justify-center items-center"><Badge>Disponible para trabajar</Badge></a>
+			</h1>
+
+			<h2 class=" text-.8xl md:text-xl lg:text-2xl opacity-80 text-wrap">
+				Estudiante de sexto semestre de la Licenciatura
+				en Multimedia y Animación Digital. Me apasiona el desarrollo de Videojuegos y la creación de Experiencias
+				Interactivas.
+			</h2>
+
+			
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center text-yellow-200">
+				<CodeIcon class="size-6"/>
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="contacto" class="py-24">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center text-yellow-200">
+				<MailIcon class="size-6"/>
+				Contacto
+			</h2>
+			<p class="mb-4 opacity-80">¿Tienes un proyecto o quieres colaborar? Escríbeme y conversemos sobre la idea.</p>
+			<nav class="justify-center flex flex-wrap gap-4 mt-4">
+				<SocialPill href="https://mail.google.com/mail/?view=cm&fs=1&to=josemunoz210699@gmail.com" label="Email">
+					<MailIcon class="w-5 h-5"/>
+				</SocialPill>
+				<SocialPill href="https://www.linkedin.com/in/josé-muñoz-b1440a38a/" label="LinkedIn">
+					<LinkedInIcon class="w-5 h-5"/>
+				</SocialPill>
+				<SocialPill href="https://github.com/JoseME1" label="GitHub">
+					<GitHubIcon class="w-5 h-5"/>
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+	</main>
+	<Footer />
 </Layout>
