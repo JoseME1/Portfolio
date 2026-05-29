@@ -13,7 +13,6 @@ const PROJECTS = [
     id: 'proj-2',
     title: 'Alien Massacre 2077',
     description: 'Videojuego de disparos en primera persona para Android desarrollado en Unity, inspirado en clásicos como Doom y un sistema de oleadas de enemigos.',
-    github: 'https://github.com/JoseME1/Alien-Massacre-2077-Final-',
     youtube: 'https://www.youtube.com/watch?v=RZJ4Y2ZlDqQ',
     image: '/assets/Proyecto AlienMassacre.webp',
     tags: ['Unity', 'C#', 'Pixel Art'],
